@@ -1,4 +1,4 @@
-import express from 'express';
+import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 
@@ -15,7 +15,6 @@ import TodoRoutes from "./routes/TodoRoute.js";
 app.use(ActivityRoutes);
 app.use(TodoRoutes);
 
-
 app.listen(3030, () => {
-    console.log('Server is running on port 3030');
-})
+  console.log("Server is running on port 3030");
+});

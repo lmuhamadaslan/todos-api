@@ -4,7 +4,7 @@ import sequelize from "../config/database.js";
 const { DataTypes } = Sequelize;
 
 const Todo = sequelize.define(
-  "todo_item",
+  "todos",
   {
     id: {
       type: DataTypes.INTEGER(11),
@@ -14,7 +14,7 @@ const Todo = sequelize.define(
     activity_group_id: {
       type: DataTypes.INTEGER(11),
       references: {
-        model: "activity_group",
+        model: "activities",
         key: "id",
       },
       allowNull: false,
@@ -25,8 +25,8 @@ const Todo = sequelize.define(
     },
     is_active: {
       type: DataTypes.BOOLEAN,
-      allowNull: false,
       defaultValue: true,
+      allowNull: false,
     },
     priority: {
       type: DataTypes.STRING(150),

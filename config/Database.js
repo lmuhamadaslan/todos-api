@@ -1,13 +1,20 @@
 import { Sequelize } from "sequelize";
 
-// const dbname = process.env.MYSQL_DBNAME;
-// const dbuser= process.env.MYSQL_USER;
-// const dbpassword = process.env.MYSQL_PASSWORD;
-// const dbhost = process.env.MYSQL_HOST;
+// const database = process.env.MYSQL_DATABASE;
+// const username = process.env.MYSQL_USER;
+// const password = process.env.MYSQL_PASSWORD;
+// const host = process.env.MYSQL_HOST;
 
-const sequelize = new Sequelize("todo_db", "root", "", {
-  host: "localhost",
+const sequelize = new Sequelize("todo_db", "username", "password", {
+  host: "172.29.240.1",
   dialect: "mysql",
+  port: 3306,
+  logging: false,
+  dialectOptions: {
+    Options: {
+      encrypt: false,
+    },
+  }
 });
 
 try {

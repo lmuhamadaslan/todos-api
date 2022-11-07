@@ -1,10 +1,10 @@
 import { Sequelize } from "sequelize";
-import sequelize from "../config/Database.js";
+import sequelize from "../config/database.js";
 
 const { DataTypes } = Sequelize;
 
 const Activity = sequelize.define(
-  "activity_group",
+  "activities",
   {
     id: {
       type: DataTypes.INTEGER(11),
